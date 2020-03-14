@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="lithpulser_matcher_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="lithpulser_matcher_tb" />
+            <top_module name="lithpulser_package" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="764500000fs"></ZoomStartTime>
+      <ZoomEndTime time="1047100001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/lithpulser_matcher_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/clear_all" type="logic">
+      <obj_property name="ElementShortName">clear_all</obj_property>
+      <obj_property name="ObjectShortName">clear_all</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/set" type="logic">
+      <obj_property name="ElementShortName">set</obj_property>
+      <obj_property name="ObjectShortName">set</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/mcs" type="other">
+      <obj_property name="ElementShortName">mcs</obj_property>
+      <obj_property name="ObjectShortName">mcs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/datain" type="array">
+      <obj_property name="ElementShortName">datain</obj_property>
+      <obj_property name="ObjectShortName">datain</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/pm" type="array">
+      <obj_property name="ElementShortName">pm[0:15]</obj_property>
+      <obj_property name="ObjectShortName">pm[0:15]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/ram_di" type="array">
+      <obj_property name="ElementShortName">ram_di[47:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_di[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/se" type="array">
+      <obj_property name="ElementShortName">se</obj_property>
+      <obj_property name="ObjectShortName">se</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/ram_we" type="array">
+      <obj_property name="ElementShortName">ram_we[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_we[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/ram_do" type="array">
+      <obj_property name="ElementShortName">ram_do[47:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_do[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/run" type="logic">
+      <obj_property name="ElementShortName">run</obj_property>
+      <obj_property name="ObjectShortName">run</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/rcs" type="other">
+      <obj_property name="ElementShortName">rcs</obj_property>
+      <obj_property name="ObjectShortName">rcs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/p" type="other">
+      <obj_property name="ElementShortName">p</obj_property>
+      <obj_property name="ObjectShortName">p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/ram_add" type="array">
+      <obj_property name="ElementShortName">ram_add[10:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_add[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/t_in" type="array">
+      <obj_property name="ElementShortName">t_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">t_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/t_l" type="array">
+      <obj_property name="ElementShortName">t_l[31:0]</obj_property>
+      <obj_property name="ObjectShortName">t_l[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/uut/le" type="array">
+      <obj_property name="ElementShortName">le</obj_property>
+      <obj_property name="ObjectShortName">le</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_matcher_tb/o" type="array">
+      <obj_property name="ElementShortName">o</obj_property>
+      <obj_property name="ObjectShortName">o</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

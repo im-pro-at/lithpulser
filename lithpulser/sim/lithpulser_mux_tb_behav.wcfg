@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="lithpulser_mux_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="lithpulser_mux_tb" />
+            <top_module name="lithpulser_package" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="834200000fs"></ZoomStartTime>
+      <ZoomEndTime time="954400001fs"></ZoomEndTime>
+      <Cursor1Time time="904400000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="147"></NameColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/lithpulser_mux_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_mux_tb/resetn" type="logic">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_mux_tb/input" type="array">
+      <obj_property name="ElementShortName">input[0:7]</obj_property>
+      <obj_property name="ObjectShortName">input[0:7]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_mux_tb/uut/reg" type="array">
+      <obj_property name="ElementShortName">reg[0:9][0:7]</obj_property>
+      <obj_property name="ObjectShortName">reg[0:9][0:7]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_mux_tb/uut/lastout" type="array">
+      <obj_property name="ElementShortName">lastout[13:0]</obj_property>
+      <obj_property name="ObjectShortName">lastout[13:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_mux_tb/output" type="array">
+      <obj_property name="ElementShortName">output[0:7][13:0]</obj_property>
+      <obj_property name="ObjectShortName">output[0:7][13:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

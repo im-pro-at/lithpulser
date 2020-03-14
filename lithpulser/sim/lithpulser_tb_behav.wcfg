@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="lithpulser_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="lithpulser_package" />
+            <top_module name="lithpulser_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="4918000000fs"></ZoomStartTime>
+      <ZoomEndTime time="6850000001fs"></ZoomEndTime>
+      <Cursor1Time time="6516000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="147"></NameColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/lithpulser_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_tb/rstn" type="logic">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject fp_name="group415" type="group">
+      <obj_property name="label">SYSTEM_BUS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/lithpulser_tb/sys_addr" type="array">
+         <obj_property name="ElementShortName">sys_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sys_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/sys_wdata" type="array">
+         <obj_property name="ElementShortName">sys_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sys_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/sys_wea" type="array">
+         <obj_property name="ElementShortName">sys_wea[3:0]</obj_property>
+         <obj_property name="ObjectShortName">sys_wea[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/sys_rea" type="logic">
+         <obj_property name="ElementShortName">sys_rea</obj_property>
+         <obj_property name="ObjectShortName">sys_rea</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/sys_rdata" type="array">
+         <obj_property name="ElementShortName">sys_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sys_rdata[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_tb/inputs" type="array">
+      <obj_property name="ElementShortName">inputs[1:0]</obj_property>
+      <obj_property name="ObjectShortName">inputs[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_tb/outputs" type="array">
+      <obj_property name="ElementShortName">outputs[13:0]</obj_property>
+      <obj_property name="ObjectShortName">outputs[13:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_tb/led_o" type="array">
+      <obj_property name="ElementShortName">led_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led_o[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lithpulser_tb/uut/seqs" type="array">
+      <obj_property name="ElementShortName">seqs[0:15]</obj_property>
+      <obj_property name="ObjectShortName">seqs[0:15]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group474" type="group">
+      <obj_property name="label">SM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/lithpulser_tb/uut/run" type="logic">
+         <obj_property name="ElementShortName">run</obj_property>
+         <obj_property name="ObjectShortName">run</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/runt" type="array">
+         <obj_property name="ElementShortName">runt[51:0]</obj_property>
+         <obj_property name="ObjectShortName">runt[51:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/seqs_count" type="array">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">seqs_count[0:15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">seqs_count[0:15][31:0]</obj_property>
+         <obj_property name="label">seqs_count[0:15]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/state" type="other">
+         <obj_property name="ElementShortName">state</obj_property>
+         <obj_property name="ObjectShortName">state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/has_next_cs" type="logic">
+         <obj_property name="ElementShortName">has_next_cs</obj_property>
+         <obj_property name="ObjectShortName">has_next_cs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/next_cs" type="other">
+         <obj_property name="ElementShortName">next_cs</obj_property>
+         <obj_property name="ObjectShortName">next_cs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/cs" type="other">
+         <obj_property name="ElementShortName">cs</obj_property>
+         <obj_property name="ObjectShortName">cs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/t" type="array">
+         <obj_property name="ElementShortName">t[31:0]</obj_property>
+         <obj_property name="ObjectShortName">t[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/seqsrun_done" type="logic">
+         <obj_property name="ElementShortName">seqsrun_done</obj_property>
+         <obj_property name="ObjectShortName">seqsrun_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/seqs_to" type="array">
+         <obj_property name="ElementShortName">seqs_to[15:0]</obj_property>
+         <obj_property name="ObjectShortName">seqs_to[15:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/seqs_to_counter" type="array">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">seqs_to_counter[0:15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">seqs_to_counter[0:15][31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">seqs_to_counter[0:15]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/seqs_done" type="array">
+         <obj_property name="ElementShortName">seqs_done[15:0]</obj_property>
+         <obj_property name="ObjectShortName">seqs_done[15:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group479" type="group">
+      <obj_property name="label">LD</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/lithpulser_tb/uut/lastldin" type="array">
+         <obj_property name="ElementShortName">lastldin[1:0]</obj_property>
+         <obj_property name="ObjectShortName">lastldin[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/ld_in" type="array">
+         <obj_property name="ElementShortName">ld_in[0:1][5:0]</obj_property>
+         <obj_property name="ObjectShortName">ld_in[0:1][5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/ldcount" type="array">
+         <obj_property name="ElementShortName">ldcount[0:1][25:0]</obj_property>
+         <obj_property name="ObjectShortName">ldcount[0:1][25:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/ldcounterreset" type="logic">
+         <obj_property name="ElementShortName">ldcounterreset</obj_property>
+         <obj_property name="ObjectShortName">ldcounterreset</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group425" type="group">
+      <obj_property name="label">MATCHERs</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/lithpulser_tb/uut/m_clear" type="logic">
+         <obj_property name="ElementShortName">m_clear</obj_property>
+         <obj_property name="ObjectShortName">m_clear</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/m_mcs" type="other">
+         <obj_property name="ElementShortName">m_mcs</obj_property>
+         <obj_property name="ObjectShortName">m_mcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/m_set" type="array">
+         <obj_property name="ElementShortName">m_set[7:0]</obj_property>
+         <obj_property name="ObjectShortName">m_set[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/m_datain" type="array">
+         <obj_property name="ElementShortName">m_datain</obj_property>
+         <obj_property name="ObjectShortName">m_datain</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/lithpulser_tb/uut/m_datain.t" type="array">
+            <obj_property name="ElementShortName">.t[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.t[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/lithpulser_tb/uut/m_datain.o" type="array">
+            <obj_property name="ElementShortName">.o[13:0]</obj_property>
+            <obj_property name="ObjectShortName">.o[13:0]</obj_property>
+            <obj_property name="Radix">BINARYRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/cs" type="other">
+         <obj_property name="ElementShortName">cs</obj_property>
+         <obj_property name="ObjectShortName">cs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/m_run" type="logic">
+         <obj_property name="ElementShortName">m_run</obj_property>
+         <obj_property name="ObjectShortName">m_run</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/m_t" type="array">
+         <obj_property name="ElementShortName">m_t[0:7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_t[0:7][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/lithpulser_tb/uut/m_t[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/lithpulser_tb/uut/m_t[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/lithpulser_tb/uut/m_t[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/lithpulser_tb/uut/m_t[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/lithpulser_tb/uut/m_t[4]" type="array">
+            <obj_property name="ElementShortName">[4][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/lithpulser_tb/uut/m_t[5]" type="array">
+            <obj_property name="ElementShortName">[5][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/lithpulser_tb/uut/m_t[6]" type="array">
+            <obj_property name="ElementShortName">[6][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/lithpulser_tb/uut/m_t[7]" type="array">
+            <obj_property name="ElementShortName">[7][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group441" type="group">
+      <obj_property name="label">MUX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/lithpulser_tb/uut/run" type="logic">
+         <obj_property name="ElementShortName">run</obj_property>
+         <obj_property name="ObjectShortName">run</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/stopout" type="array">
+         <obj_property name="ElementShortName">stopout[13:0]</obj_property>
+         <obj_property name="ObjectShortName">stopout[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/muxin" type="array">
+         <obj_property name="ElementShortName">muxin[0:7]</obj_property>
+         <obj_property name="ObjectShortName">muxin[0:7]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/os" type="array">
+         <obj_property name="ElementShortName">os[0:7][13:0]</obj_property>
+         <obj_property name="ObjectShortName">os[0:7][13:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group445" type="group">
+      <obj_property name="label">O</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/lithpulser_tb/uut/rstn" type="logic">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/os" type="array">
+         <obj_property name="ElementShortName">os[0:7][13:0]</obj_property>
+         <obj_property name="ObjectShortName">os[0:7][13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/uut/outputs" type="array">
+         <obj_property name="ElementShortName">outputs[13:0]</obj_property>
+         <obj_property name="ObjectShortName">outputs[13:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group407" type="group">
+      <obj_property name="label">LOG_FIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/lithpulser_tb/log_reset" type="logic">
+         <obj_property name="ElementShortName">log_reset</obj_property>
+         <obj_property name="ObjectShortName">log_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/log_din" type="array">
+         <obj_property name="ElementShortName">log_din[56:0]</obj_property>
+         <obj_property name="ObjectShortName">log_din[56:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/log_wr" type="logic">
+         <obj_property name="ElementShortName">log_wr</obj_property>
+         <obj_property name="ObjectShortName">log_wr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/log_rd" type="logic">
+         <obj_property name="ElementShortName">log_rd</obj_property>
+         <obj_property name="ObjectShortName">log_rd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/log_dout" type="array">
+         <obj_property name="ElementShortName">log_dout[56:0]</obj_property>
+         <obj_property name="ObjectShortName">log_dout[56:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/log_full" type="logic">
+         <obj_property name="ElementShortName">log_full</obj_property>
+         <obj_property name="ObjectShortName">log_full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lithpulser_tb/log_empty" type="logic">
+         <obj_property name="ElementShortName">log_empty</obj_property>
+         <obj_property name="ObjectShortName">log_empty</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

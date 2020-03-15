@@ -37,9 +37,9 @@ begin
     clk_process :process
     begin
         clk <= '0';
-        wait for clk_period/2;  --for 0.5 ns signal is '0'.
+        wait for clk_period/2;  
         clk <= '1';
-        wait for clk_period/2;  --for next 0.5 ns signal is '1'.
+        wait for clk_period/2; 
     end process;    
     
     -- Stimulus process

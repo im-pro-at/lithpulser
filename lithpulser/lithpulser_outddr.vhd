@@ -28,46 +28,52 @@ end lithpulser_outddr;
 architecture Behavioral of lithpulser_outddr is
     signal rst: STD_LOGIC;
     signal rst_sync: STD_LOGIC;
-    signal clkfb : STD_LOGIC;
+    signal clk_ub : STD_LOGIC;
     signal clk_out : STD_LOGIC;
+    signal clk4_ub : STD_LOGIC; 
     signal clk4_out : STD_LOGIC; 
-    signal pll_locked : STD_LOGIC;
+    signal mmcm_locked : STD_LOGIC;
         
     signal out_prebuf : std_logic_vector(C_OUTPUTS-1 downto 0);
-
-    attribute dont_touch : string;
-    attribute dont_touch of clkfb : signal is "true";
-    attribute dont_touch of clk_out : signal is "true";
-    attribute dont_touch of clk4_out : signal is "true";
 
 begin
     rst <= not rstn;
     
-    pll: PLLE2_ADV generic map
+    MMCM: MMCME2_ADV generic map
     (
-        BANDWIDTH          =>   "HIGH",
-        COMPENSATION       =>   "ZHOLD",
-        DIVCLK_DIVIDE      =>   1,
-        CLKFBOUT_MULT      =>   8,
-        CLKFBOUT_PHASE     =>   0.000,
-        CLKOUT0_DIVIDE     =>   8,
-        CLKOUT0_PHASE      =>   0.000,
-        CLKOUT0_DUTY_CYCLE =>   0.500,
-        CLKOUT1_DIVIDE     =>   2,
-        CLKOUT1_PHASE      =>   0.000,
-        CLKOUT1_DUTY_CYCLE =>   0.500,
-        CLKIN1_PERIOD      =>   8.0
+        BANDWIDTH             =>   "OPTIMIZED",
+        CLKOUT4_CASCADE       =>   FALSE,
+        COMPENSATION          =>   "ZHOLD",
+        STARTUP_WAIT          =>   FALSE,
+        DIVCLK_DIVIDE         =>   1,
+        CLKFBOUT_MULT_F       =>   8.000,
+        CLKFBOUT_PHASE        =>   0.00,
+        CLKFBOUT_USE_FINE_PS  =>   FALSE,
+        CLKOUT0_DIVIDE_F      =>   8.000,
+        CLKOUT0_PHASE         =>   0.000,
+        CLKOUT0_DUTY_CYCLE    =>   0.500,
+        CLKOUT0_USE_FINE_PS   =>   FALSE,
+        CLKOUT1_DIVIDE        =>   2,
+        CLKOUT1_PHASE         =>   0.000,
+        CLKOUT1_DUTY_CYCLE    =>   0.500,
+        CLKOUT1_USE_FINE_PS   =>   FALSE,
+        CLKIN1_PERIOD         =>   8.0
     )
     port map(
-        CLKFBOUT      =>      clkfb, 
-        CLKOUT0       =>      clk_out,   --125Mhz
-        CLKOUT1       =>      clk4_out,  --500Mhz
+        CLKFBOUT      =>      open, 
+        CLKFBOUTB     =>      open,
+        CLKOUT0       =>      clk_ub,
+        CLKOUT0B      =>      open,
+        CLKOUT1       =>      clk4_ub,
+        CLKOUT1B      =>      open,
         CLKOUT2       =>      open,
+        CLKOUT2B      =>      open,
         CLKOUT3       =>      open,
+        CLKOUT3B      =>      open,
         CLKOUT4       =>      open,
         CLKOUT5       =>      open,
         --Input clock control
-        CLKFBIN       =>      clkfb,
+        CLKFBIN       =>      clk_out,
         CLKIN1        =>      clk_in,
         CLKIN2        =>      '0',
         --Tied to always select the primary input clock
@@ -81,15 +87,34 @@ begin
         DRDY          =>      open,
         DWE           =>      '0',
         --Other control and status signals
-        LOCKED        =>      pll_locked,
+        PSCLK         =>      '1',
+        PSEN          =>      '1',
+        PSINCDEC      =>      '1',
+        PSDONE        =>      open,
+        LOCKED        =>      mmcm_locked,
+        CLKINSTOPPED  =>      open,
+        CLKFBSTOPPED  =>      open,
         PWRDWN        =>      '0',
         RST           =>      rst
     );
-   
-    reset_sync: process(clk_in)
+    
+    clkr_o_buf: BUFR port map 
+    (
+        I=> clk_ub,
+        O=> clk_out,
+        CE => '1',
+        CLR => '0'
+    );
+    clkio_o_buf: BUFIO port map 
+    (
+        I=> clk4_ub,
+        O=> clk4_out
+    );
+    
+    reset_sync: process(clk_out)
     begin
-        if(rising_edge(clk_in)) then
-            rst_sync <= (not pll_locked) or rst;
+        if(rising_edge(clk_out)) then
+            rst_sync <= (not mmcm_locked) or rst;
         end if;
     end process;    
         

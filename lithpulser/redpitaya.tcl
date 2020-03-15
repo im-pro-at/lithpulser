@@ -319,7 +319,7 @@ make_wrapper -files [get_files redpitaya/system.bd] -top
 add_files -norecurse redpitaya/hdl/system_wrapper.vhd
 set_property top system_wrapper [current_fileset]
 
-
+current_fileset -simset [ get_filesets main ]
 
 
 

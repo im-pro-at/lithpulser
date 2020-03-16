@@ -47,7 +47,7 @@ PIN Mapping:
 
 ## Build decoder 
 
-
+Open the folder with Netbeans and hit build. 
 
 ## Build logger
 
@@ -60,7 +60,17 @@ Then just run: make
 
 ## Build the fpga design 
 
+Open Vivado (2016.2 was used).
 
+Open the tcl console.
+
+Type: cd <folder of the source code>
+
+Type: source redpidaya.tcl
+
+Then the project opens and just click write bitstream.
+
+When the build is finished copy system_wrapper.bin to the redpidaya and name it fpga.bin
 
 ## FPGA Memory Interface
 

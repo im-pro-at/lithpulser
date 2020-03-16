@@ -16,7 +16,7 @@ install gcc
 run make
 
 
-#FPGA Memory Interface
+## FPGA Memory Interface
 
 The following memory allocation is used for the memory mapped interface between internal ARM processor and the final FPGA design:
 

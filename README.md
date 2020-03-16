@@ -3,15 +3,15 @@
 At the moment only the STEMlab 125-10 from red pitaya is supported. But It schould not be a big Problem to port this Projekt to other development boards and it should even run on an Z-7007S but is not tested.
 
 
-€# Get started STEMlab 125-10
+## Get started
 
-Follow the folloing quick start guid: https://redpitaya.readthedocs.io/en/latest/quickStart/quickStart.html
+Follow the folloing quick start guid to setup the redpidaya: https://redpitaya.readthedocs.io/en/latest/quickStart/quickStart.html
 
 Copy the files form the last release to the redpidaya. This should help you to do that: https://redpitaya.readthedocs.io/en/latest/developerGuide/software/clt.html#saving-data-buffers
 
 Then you need an ssh acess to the board: https://redpitaya.readthedocs.io/en/latest/developerGuide/os/ssh/ssh.html
 
-Make logger runabel with the following command: chmod +x logger 
+Make the logger runabel with the following command: chmod +x logger 
 
 Run the logger with ./logger this will load the fpga design and save logging data if generated.
 
@@ -21,18 +21,45 @@ Configure the lithpulser with the monitor command. Look at the test script for s
 
 That's it. Have fun!
 
+## Pin mapping
+
+For the locations of the connections look at this Dokumentation: https://redpitaya.readthedocs.io/en/latest/developerGuide/125-14/extent.html
+
+PIN Mapping:
+*   I0:    DIO0_N 
+*   I1:    DIO1_N
+*   O0:    DIO0_P
+*   O1:    DIO1_P
+*   O2:    DIO2_P
+*   O3:    DIO3_P
+*   O4:    DIO4_P
+*   O5:    DIO5_P
+*   O6:    DIO6_P
+*   O7:   DIO7_P
+*   O8:    DIO2_N
+*   O9:    DIO3_N
+*   O10:    DIO4_N
+*   O11:    DIO5_N
+*   O12:    DIO6_N
+*   O13:    DIO7_N
+
 
 
 ## Build decoder 
 
 
 
-
 ## Build logger
 
-load the source code and the make file to the linux on the zync. You can cross compile it but this way is a lot easier.
-install gcc
-run make
+The easiest way is to compile the logger on the target system. It's possible to crosscompile but it's much more effort to do so.
+
+Copy the source code to the redpidaya. 
+
+Then just run: make 
+
+
+## Build the fpga design 
+
 
 
 ## FPGA Memory Interface
@@ -63,9 +90,6 @@ The Control section has the following mapping:
 | Log UP half | 0x034 | 0:24 | R | Read the upper half of the current log entry |
 | Log next | 0x038 | 0 | R | Read if there is a current log entry to read.If &quot;1&quot; is read a new log entry can be read from 0x030 and 0x034. If &quot;0&quot; is read there is no new log entry. |
 | Log Overflow | 0x03C | 0 | R | If &quot;1&quot; is read the log buffer is overflown. Therefore some of the log entries are lost.  The buffer can hold roughly up to 16.000 events. |
-
-
-
 
 
 The log entries have the following decoding.  The first bit determines the type of the entry:

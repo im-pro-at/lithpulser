@@ -18,7 +18,9 @@ run make
 
 ## FPGA Memory Interface
 
-The following memory allocation is used for the memory mapped interface between internal ARM processor and the final FPGA design:
+The following memory allocation is used for the memory mapped interface between Linux operating system and the FPGA design:
+
+You can use the monitor tool from redpidaya: https://github.com/RedPitaya/RedPitaya/tree/master/Test/monitor
 
 | **Section Name** | **Start Address** | **Description** |
 | --- | --- | --- |

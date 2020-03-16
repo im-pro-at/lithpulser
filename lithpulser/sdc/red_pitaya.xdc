@@ -24,15 +24,17 @@ set_property PACKAGE_PIN V18 [get_ports adc_cdcs_o]
 set_property SLEW FAST [get_ports adc_cdcs_o]
 set_property DRIVE 8 [get_ports adc_cdcs_o]
 
-### inputs / outputs
+### inputs
 set_property IOSTANDARD LVCMOS33 [get_ports {inputs[*]}]
 set_property IOB TRUE [get_ports {inputs[*]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {outputs[*]}]
-set_property SLEW FAST [get_ports {outputs[*]}]
-set_property DRIVE 8 [get_ports {outputs[*]}]
 set_property PULLDOWN TRUE [get_ports {inputs[*]}]
 set_property PACKAGE_PIN G18 [get_ports {inputs[0]}]
 set_property PACKAGE_PIN H17 [get_ports {inputs[1]}]
+
+### outputs
+set_property IOSTANDARD LVCMOS33 [get_ports {outputs[*]}]
+set_property SLEW FAST [get_ports {outputs[*]}]
+set_property DRIVE 8 [get_ports {outputs[*]}]
 set_property PACKAGE_PIN G17 [get_ports {outputs[0]}]
 set_property PACKAGE_PIN H16 [get_ports {outputs[1]}]
 set_property PACKAGE_PIN J18 [get_ports {outputs[2]}]

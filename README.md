@@ -1,15 +1,34 @@
 # Lith Pulser (Logic Input Triggered High-resolution Pulser)
 
-At the moment only the STEMlab 125-10 from red pitaya is supported. But It schould not be a big Problem to port this Projekt to other development boards and should even run on an Z-7007S but is not tested.
+At the moment only the STEMlab 125-10 from red pitaya is supported. But It schould not be a big Problem to port this Projekt to other development boards and it should even run on an Z-7007S but is not tested.
 
-## Get started STEMlab 125-10
+
+€# Get started STEMlab 125-10
 
 Follow the folloing quick start guid: https://redpitaya.readthedocs.io/en/latest/quickStart/quickStart.html
 
+Copy the files form the last release to the redpidaya. This should help you to do that: https://redpitaya.readthedocs.io/en/latest/developerGuide/software/clt.html#saving-data-buffers
+
 Then you need an ssh acess to the board: https://redpitaya.readthedocs.io/en/latest/developerGuide/os/ssh/ssh.html
 
+Make logger runabel with the following command: chmod +x logger 
 
-## Compile logger
+Run the logger with ./logger this will load the fpga design and save logging data if generated.
+
+Open another ssh connection. 
+
+Configure the lithpulser with the monitor command. Look at the test script for some inspiration: https://github.com/im-pro-at/lithpulser/blob/master/testscript.sh
+
+That's it. Have fun!
+
+
+
+## Build decoder 
+
+
+
+
+## Build logger
 
 load the source code and the make file to the linux on the zync. You can cross compile it but this way is a lot easier.
 install gcc

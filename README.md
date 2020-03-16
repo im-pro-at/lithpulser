@@ -64,7 +64,7 @@ Open Vivado (2016.2 was used).
 
 Open the tcl console.
 
-Type: cd <folder of the source code>
+Type: cd < folder of the source code >
 
 Type: source redpidaya.tcl
 

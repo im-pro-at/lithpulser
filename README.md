@@ -1,6 +1,13 @@
 # Lith Pulser (Logic Input Triggered High-resolution Pulser)
 
-At the moment only the STEMlab 125-10 from red pitaya is supported. But It schould not be a big Problem to port this Projekt to other development boards and it should even run on an Z-7007S but is not tested.
+
+## Hardware 
+
+At the moment only the STEMlab 125-10 from red pitaya is supported. 
+
+https://www.redpitaya.com/p1/stemlab-125-10-starter-kit
+
+But It schould not be a big Problem to port this Projekt to other development boards and it should even run on an Z-7007S but is not tested.
 
 
 ## Get started

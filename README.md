@@ -13,11 +13,21 @@ Then you need an ssh acess to the board: https://redpitaya.readthedocs.io/en/lat
 
 Make the logger runabel with the following command: chmod +x logger 
 
-Run the logger with ./logger this will load the fpga design and save logging data if generated.
+Run the logger with ./logger this will load the fpga design and save logging data in a bainary format if generated.
 
 Open another ssh connection. 
 
 Configure the lithpulser with the monitor command. Look at the test script for some inspiration: https://github.com/im-pro-at/lithpulser/blob/master/testscript.sh
+
+After the experiment is finished you can run the decoder. If you want to run it on the redpidaya you need to Install java on the redpitaya: 
+
+apt-get update
+
+apt-get install default-jre
+
+Then you can run the decoder: java -jar decoder-1.0.jar
+
+The results are saved in the folder runs. If you need to save a lot of log data you can mount a network drive or an external hard dist to that folder. 
 
 That's it. Have fun!
 

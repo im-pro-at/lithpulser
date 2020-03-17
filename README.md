@@ -1,24 +1,16 @@
 # Lith Pulser (Logic Input Triggered High-resolution Pulser)
 
-The lith pulser was developt to be used as the main controller for a complex and time sensitive experiment. 
+The lith pulser was developed to be used as the main controller for a complex and time sensitive experiment.
 
-For the research project “Diamond” at The Institute of Atomic and Subatomic Physics which aims to 
-characterize and exploit the remarkable quantum properties of defect centers in diamond this controlling mechanism was used. 
+For the research project “Diamond” at The Institute of Atomic and Subatomic Physics which aims to characterize and exploit the remarkable quantum properties of defect centers in diamond this controlling mechanism was used.
 
-The controller can generate trigger pulses or logical input for other instruments at a resolution of 1ns.
-16 different sequence can be programmed. This sequences can contain 128 Pattern changes for 14 digital output ports.
+The controller can generate trigger pulses or logical input for other instruments at a resolution of 1ns. 16 different sequence can be programmed. This sequences can contain 128 Pattern changes for 14 digital output ports.
 
-A sequence can have a timeout. If the programmed time is over the sequence is rerun. Additionally a logical condition can be programmed that can cause an immediately rerun.
+A sequence can have a timeout. If the programmed time is over the sequence is rerun. Additionally, a logical condition can be programmed that can cause an immediately rerun.
 
-For the logical condition 2 input ports are provided. The impulses on this ports are counted in an definable time interval.
-If the count is not in an specified interval the sequence is repitedt. 
-This can be used to get the test object into an base state and this process will be repitedt till the base state is reached. 
+For the logical condition 2 input ports are provided. The impulses on this ports are counted in a definable time interval. If the count is not in a specified interval the sequence is repeated. This can be used to get the test object into a base state and this process will be repeated till the base state is reached.
 
-A sequence can be up to 4 second long and the time to switch between two sequences is exactly 48ns. 
-If more the one sequence needs to be rerun the sequence with the lower number has the higher priority.
-
-
-
+A sequence can be up to 4 second long and the time to switch between two sequences is exactly 48ns. If more the one sequence needs to be rerun the sequence with the lower number has the higher priority.
 
 ## Hardware 
 

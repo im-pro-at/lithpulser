@@ -27,10 +27,8 @@ Open another ssh connection.
 Configure the lithpulser with the monitor command. Look at the test script for some inspiration: https://github.com/im-pro-at/lithpulser/blob/master/testscript.sh
 
 After the experiment is finished you can run the decoder. If you want to run it on the redpidaya you need to Install java on the redpitaya: 
-
-apt-get update
-
-apt-get install default-jre
+*  apt-get update
+*  apt-get install default-jre
 
 Then you can run the decoder: java -jar decoder-1.0.jar
 

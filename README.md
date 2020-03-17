@@ -18,19 +18,19 @@ Copy the files form the last release to the redpidaya. This should help you to d
 
 Then you need an ssh acess to the board: https://redpitaya.readthedocs.io/en/latest/developerGuide/os/ssh/ssh.html
 
-Make the logger runabel with the following command: chmod +x logger 
+Make the logger runabel with the following command: "chmod +x logger" 
 
-Run the logger with ./logger this will load the fpga design and save logging data in a bainary format if generated.
+Run the logger with "./logger" this will load the fpga design and save logging data in a bainary format if generated.
 
 Open another ssh connection. 
 
 Configure the lithpulser with the monitor command. Look at the test script for some inspiration: https://github.com/im-pro-at/lithpulser/blob/master/testscript.sh
 
 After the experiment is finished you can run the decoder. If you want to run it on the redpidaya you need to Install java on the redpitaya: 
-*  apt-get update
-*  apt-get install default-jre
+*  "apt-get update"
+*  "apt-get install default-jre"
 
-Then you can run the decoder: java -jar decoder-1.0.jar
+Then you can run the decoder: "java -jar decoder-1.0.jar"
 
 The results are saved in the folder runs. If you need to save a lot of log data you can mount a network drive or an external hard dist to that folder. 
 
@@ -50,7 +50,7 @@ PIN Mapping:
 *   O4:    DIO4_P
 *   O5:    DIO5_P
 *   O6:    DIO6_P
-*   O7:   DIO7_P
+*   O7:    DIO7_P
 *   O8:    DIO2_N
 *   O9:    DIO3_N
 *   O10:    DIO4_N
@@ -70,7 +70,7 @@ The easiest way is to compile the logger on the target system. It's possible to 
 
 Copy the source code to the redpidaya. 
 
-Then just run: make 
+Then just run: "make"
 
 
 ## Build the fpga design 
@@ -79,19 +79,21 @@ Open Vivado (2016.2 was used).
 
 Open the tcl console.
 
-Type: cd < folder of the source code >
+Type: "cd < folder of the source code >"
 
-Type: source redpidaya.tcl
+Type: "source redpitaya.tcl"
 
 Then the project opens and just click write bitstream.
 
-When the build is finished copy system_wrapper.bin to the redpidaya and name it fpga.bin
+When the build is finished copy "system_wrapper.bin" to the redpidaya and name it "fpga.bin"
 
 ## FPGA Memory Interface
 
 The following memory allocation is used for the memory mapped interface between Linux operating system and the FPGA design:
 
-You can use the monitor tool from redpidaya: https://github.com/RedPitaya/RedPitaya/tree/master/Test/monitor
+You can use the commadn "monitor" from redpidaya https://github.com/RedPitaya/RedPitaya/tree/master/Test/monitor 
+
+It schould be pre installed on the redpitaya linux image.
 
 | **Section Name** | **Start Address** | **Description** |
 | --- | --- | --- |

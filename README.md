@@ -69,7 +69,15 @@ PIN Mapping:
 *   O12:    DIO6_N
 *   O13:    DIO7_N
 
-
+Status Leds:
+*	0:	RUN
+*	1:	Log overrun
+*	2:	Sequence 1 active
+*	3:	Sequence 2 active
+*	4:	Sequence 3 active
+*	5:	Sequence 4 active
+*	6:	Sequence 5 active
+*	7:	Sequence 6 active
 
 ## Build decoder 
 

@@ -18,24 +18,24 @@ At the moment only the STEMlab 125-10 from red pitaya is supported.
 
 https://www.redpitaya.com/p1/stemlab-125-10-starter-kit
 
-But It schould not be a big Problem to port this Projekt to other development boards and it should even run on an Z-7007S but is not tested.
+But It should not be a big Problem to port this project to other development boards and it should even run on an Z-7007S but is not tested.
 
 
 ## Get started
 
-Follow the folloing quick start guid to setup the redpidaya: https://redpitaya.readthedocs.io/en/latest/quickStart/quickStart.html
+Follow the following quick start guide to setup the redpidaya: https://redpitaya.readthedocs.io/en/latest/quickStart/quickStart.html
 
 Copy the files form the last release to the redpidaya. This should help you to do that: https://redpitaya.readthedocs.io/en/latest/developerGuide/software/clt.html#saving-data-buffers
 
-Then you need an ssh acess to the board: https://redpitaya.readthedocs.io/en/latest/developerGuide/os/ssh/ssh.html
+Then you need an SSH access to the board: https://redpitaya.readthedocs.io/en/latest/developerGuide/os/ssh/ssh.html
 
-Make the logger runabel with the following command: "chmod +x logger" 
+Make the logger runable with the following command: "chmod +x logger" 
 
-Run the logger with "./logger" this will load the fpga design and save logging data in a bainary format if generated.
+Run the logger with "./logger" this will load the FPGA design and save logging data in a binary format if generated.
 
-Open another ssh connection. 
+Open another SSH connection. 
 
-Configure the lithpulser with the monitor command. Look at the test script for some inspiration: https://github.com/im-pro-at/lithpulser/blob/master/testscript.sh
+Configure the lith pulser with the "monitor" command. Look at the test script for some inspiration: https://github.com/im-pro-at/lithpulser/blob/master/testscript.sh
 
 After the experiment is finished you can run the decoder. If you want to run it on the redpidaya you need to Install java on the redpitaya: 
 *  "apt-get update"
@@ -77,18 +77,18 @@ Open the folder with Netbeans and hit build.
 
 ## Build logger
 
-The easiest way is to compile the logger on the target system. It's possible to crosscompile but it's much more effort to do so.
+The easiest way is to compile the logger on the target system. It's possible to cross compile but it's much more effort to do so.
 
 Copy the source code to the redpidaya. 
 
 Then just run: "make"
 
 
-## Build the fpga design 
+## Build the FPGA design 
 
 Open Vivado (2016.2 was used).
 
-Open the tcl console.
+Open the "TCL Console".
 
 Type: "cd < folder of the source code >"
 
@@ -102,9 +102,9 @@ When the build is finished copy "system_wrapper.bin" to the redpidaya and name i
 
 The following memory allocation is used for the memory mapped interface between Linux operating system and the FPGA design:
 
-You can use the commadn "monitor" from redpidaya https://github.com/RedPitaya/RedPitaya/tree/master/Test/monitor 
+You can use the command "monitor" from redpidaya https://github.com/RedPitaya/RedPitaya/tree/master/Test/monitor 
 
-It schould be pre installed on the redpitaya linux image.
+It should be pre installed on the redpitaya linux image.
 
 | **Section Name** | **Start Address** | **Description** |
 | --- | --- | --- |
@@ -123,10 +123,10 @@ The Control section has the following mapping:
 | Run | 0x004 | 0 | R/W | If set to &quot;1&quot; the whole design starts running. Also the counters and log buffer is flushed. If set to &quot;0&quot; the whole design stops. While &quot;0&quot; the output is set to the Default Pattern. |
 | Clear | 0x008 | 0 | W | If set to &quot;1&quot; all setting and all patterns of all sequences are set to default. The settings in the Control section are not affected. |
 | Default Pattern | 0x010 | 0:13 | R/W | When Run is set to &quot;0&quot; this pattern will be output. |
-| Log Level | 0x020 | 0:1 | R/W | There are two logging sources which can be enabled independently:If Bit 0 is set to &quot;1&quot; all counter values will be logged.If Bit 1 is set to &quot;1&quot; all sequence start times will be logged. |
+| Log Level | 0x020 | 0:1 | R/W | There are two logging sources which can be enabled independently. If Bit 0 is set to &quot;1&quot; all counter values will be logged. If Bit 1 is set to &quot;1&quot; all sequence start times will be logged. |
 | Log LO half | 0x030 | 0:31 | R | Read the lower half of the current log entry |
 | Log UP half | 0x034 | 0:24 | R | Read the upper half of the current log entry |
-| Log next | 0x038 | 0 | R | Read if there is a current log entry to read.If &quot;1&quot; is read a new log entry can be read from 0x030 and 0x034. If &quot;0&quot; is read there is no new log entry. |
+| Log next | 0x038 | 0 | R | Read if there is a current log entry to read. If &quot;1&quot; is read a new log entry can be read from 0x030 and 0x034. If &quot;0&quot; is read there is no new log entry. |
 | Log Overflow | 0x03C | 0 | R | If &quot;1&quot; is read the log buffer is overflown. Therefore some of the log entries are lost.  The buffer can hold roughly up to 16.000 events. |
 
 
@@ -155,7 +155,7 @@ The memory mapping of all the sequence sections is the same and has the followin
 | MTR Output | 0x030 | 0:13 | R/W | The Memory Transfer Register for the Output pattern. |
 | MTR Time | 0x034 | 0:31 | R/W | The Memory Transfer Register for the Output time in ns relative to the start of the sequence. |
 | MTR Trigger | 0x038 | 0 | W | Done to the internal structure the patterns cannot be saved directly. So for each pattern and time the values must be written to the MTRs. Then this register must be set to &quot;1&quot; to process the data. This must be repeated for all patterns. The pattern must also be programmed ordered by time starting with the smallest value.   |
-| LD Mode | 0x100 | 0:7 | R/W | For tuning this register is used to set the condition to detect when the tuning is successful. If the condition is not true the sequence is repeated. This is independent from the rerun time.If set to &quot;0&quot; the condition is always true.If set to &quot;1&quot; I0 must be in its limits.If set to &quot;2&quot; I1 must be in its limits.If set to &quot;3&quot; I0 and I1 must be in its limits.If set to &quot;4&quot; I0 or I1 must be in its limits. |
+| LD Mode | 0x100 | 0:7 | R/W | For tuning this register is used to set the condition to detect when the tuning is successful. If the condition is not true the sequence is repeated. This is independent from the rerun time. If set to &quot;0&quot; the condition is always true. If set to &quot;1&quot; I0 must be in its limits. If set to &quot;2&quot; I1 must be in its limits. If set to &quot;3&quot; I0 and I1 must be in its limits. If set to &quot;4&quot; I0 or I1 must be in its limits. |
 | LD I0 start | 0x110 | 0:31 | R/W | The start time of the window in which the impulses are counted. This time is 128ns behind the output. |
 | LD I0 stop | 0x114 | 0:31 | R/W | The stop time of the window in which the impulses are counted. This time is 128ns behind the output. |
 | LD I0 min | 0x118 | 0:25 |   | The lower limit for the counter value to compare to. |

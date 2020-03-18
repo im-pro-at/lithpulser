@@ -1,5 +1,7 @@
 # Lith Pulser (Logic Input Triggered High-resolution Pulser)
 
+![design](docu/design.jpg?raw=true)
+
 The lith pulser was developed to be used as the main controller for a complex and time sensitive experiment.
 
 For the research project “Diamond” at The Institute of Atomic and Subatomic Physics which aims to characterize and exploit the remarkable quantum properties of defect centers in diamond this controlling mechanism was used.
@@ -11,6 +13,8 @@ A sequence can have a timeout. If the programmed time is over the sequence is re
 For the logical condition 2 input ports are provided. The impulses on this ports are counted in a definable time interval. If the count is not in a specified interval the sequence is repeated. This can be used to get the test object into a base state and this process will be repeated till the base state is reached.
 
 A sequence can be up to 4 second long and the time to switch between two sequences is exactly 48ns. If more the one sequence needs to be rerun the sequence with the lower number has the higher priority.
+
+More information about the design can be found in this documentation: https://github.com/im-pro-at/lithpulser/blob/master/docu/projekt.pdf
 
 ## Hardware 
 

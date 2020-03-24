@@ -12,9 +12,9 @@ The controller can generate TTL-standard compatiple digital pulses at a time res
 
 Details on sequence play control:
 1. A sequence can have a finite timeout value. Passing the timeout will trigger the sequence to be rerun which currently has timed out AND the highest priority value (lower sequence numbers have higher priority). 
-2. Additionally, a logical condition can be programmed on the condition of detecting an event at one or both of the two digital input channels within the user specified time period in the sequence. Detection and passing the logic condition then triggers fast change of sequence with a minimal delay time of 48 ns. This mechanism provides the basis for repeating sequences until success.
+2. Additionally, a logical condition can be programmed on detecting an event(s) at one or both of the two digital input channels within the user specified time period in the sequence. Detection and passing the logic condition then triggers fast change of the next sequence  to be played with a minimal delay time of 48 ns. This mechanism provides the basis for repeating sequences until success.
 
-A sequence can be up to 4 seconds long and the time to switch between two sequences is always exactly 48ns. 
+A sequence can be up to 4 seconds long and the time to switch between two sequences is always exactly 48ns. A default output pattern can be defined for periods in between sequences and when pulsing is switched off. Logging of sequence execution is available.
 
 More information about the design can be found in documentation: https://github.com/im-pro-at/lithpulser/blob/master/docu/projekt.pdf
 
@@ -24,32 +24,32 @@ At the moment only the STEMlab 125-10 from red pitaya is supported.
 
 https://www.redpitaya.com/p1/stemlab-125-10-starter-kit
 
-But it should be possible to port this project to other development boards as well and it should even run on an Z-7007S but this has not been tested.
+It should be possible to port this project to other development boards as well and it should even run on an Z-7007S but this has not been tested.
 
 
 ## Get started
 
-Follow the following quick start guide to setup the redpidaya: https://redpitaya.readthedocs.io/en/latest/quickStart/quickStart.html
+Follow this quick start guide to setup the Redpidaya: https://redpitaya.readthedocs.io/en/latest/quickStart/quickStart.html
 
-Copy the files form the last release to the redpidaya. This should help you to do that: https://redpitaya.readthedocs.io/en/latest/developerGuide/software/clt.html#saving-data-buffers
+Copy the files from the last release to the Redpidaya. This should help you to do that: https://redpitaya.readthedocs.io/en/latest/developerGuide/software/clt.html#saving-data-buffers
 
-Then you need an SSH access to the board: https://redpitaya.readthedocs.io/en/latest/developerGuide/os/ssh/ssh.html
+You need SSH access to the board: https://redpitaya.readthedocs.io/en/latest/developerGuide/os/ssh/ssh.html
 
 Make the logger runable with the following command: "chmod +x logger" 
 
-Run the logger with "./logger" this will load the FPGA design and save logging data in a binary format if generated.
+Run the logger with "./logger", This will load the FPGA design and save logging data in a binary format if enabled.
 
 Open another SSH connection. 
 
 Configure the lith pulser with the "monitor" command. Look at the test script for some inspiration: https://github.com/im-pro-at/lithpulser/blob/master/testscript.sh
 
-After the experiment is finished you can run the decoder. If you want to run it on the redpidaya you need to Install java on the redpitaya: 
+After the experiment is finished you can run the decoder. If you want to run it on the Redpidaya you need to install java: 
 *  "apt-get update"
 *  "apt-get install default-jre"
 
-Then you can run the decoder: "java -jar decoder-1.0.jar"
+Then run the decoder: "java -jar decoder-1.0.jar"
 
-The results are saved in the folder runs. If you need to save a lot of log data you can mount a network drive or an external hard dist to that folder. 
+The results are saved in the folder "runs". If you need to save a lot of log data you can mount a network drive or an external hard disc to that folder. 
 
 That's it. Have fun!
 
@@ -108,13 +108,13 @@ Type: "cd < folder of the source code >"
 
 Type: "source redpitaya.tcl"
 
-Then the project opens and just click write bitstream.
+Then the project opens and just click "write bitstream".
 
-When the build is finished copy "system_wrapper.bin" to the redpidaya and name it "fpga.bin"
+When the build is finished copy "system_wrapper.bin" to the Redpidaya and name it "fpga.bin"
 
 ## FPGA Memory Interface
 
-The following memory allocation is used for the memory mapped interface between Linux operating system and the FPGA design:
+The following memory allocation is used for the memory mapped interface between the Linux operating system and the FPGA design:
 
 You can use the command "monitor" from redpidaya https://github.com/RedPitaya/RedPitaya/tree/master/Test/monitor 
 

@@ -164,7 +164,7 @@ The memory mapping of the sequence sections is the same for all and has the foll
 | --- | --- | --- | --- | --- |
 | Enable | 0x000 | 0 | R/W | If set to &quot;1&quot; this sequence will be enabled. If set to &quot;0&quot; this sequence will not be used. |
 | Runs | 0x010 | 0:31 | R | Is the up to date value of the number of runs of this sequence. This value will be reset when "Run" is set to &quot;1&quot; |
-| Rerun | 0x020 | 0:31 | R/W | Time in ns when the sequence has to be rerun (timeout value). This can be set to 0 for consant repetition when on the lowest sequence priority. The timeout value may be set to the time a certain routine has to be repeated. If the value is set to &quot;0xFFFFFFFF&quot; the sequence will never be repeated. |
+| Rerun | 0x020 | 0:31 | R/W | Time in ns when the sequence has to be rerun (timeout value). This can be set to 0 for consant repetition when on the highest sequence priority (lowest sequence number). The timeout value may be set to the time a certain routine has to be repeated. If the value is set to &quot;0xFFFFFFFF&quot; the sequence will never be repeated. |
 | Length | 0x024 | 0:31 | R/W | Length of the sequence in ns. Due to the internal structure the lowest 3 bits are ignored. This means the length can only be a multiple of 8ns. |
 | MTR Output | 0x030 | 0:13 | R/W | The Memory Transfer Register (MTR) for the output channel pattern. |
 | MTR Time | 0x034 | 0:31 | R/W | The MTR for the output time in ns relative to the start of the sequence. |

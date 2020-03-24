@@ -320,8 +320,7 @@ add_files -norecurse redpitaya/hdl/system_wrapper.vhd
 set_property top system_wrapper [current_fileset]
 
 current_fileset -simset [ get_filesets main ]
-
-
+delete_fileset sim_1
 
 
 

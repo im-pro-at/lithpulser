@@ -2,19 +2,21 @@
 
 ![design](docu/design.jpg?raw=true)
 
-The lith pulser was developed to be used as the main controller for a complex and time sensitive experiment.
+The lith pulser was developed to be used as a main controller for complex and time sensitive experiments.
 
-For the research project “Diamond” at The Institute of Atomic and Subatomic Physics which aims to characterize and exploit the remarkable quantum properties of defect centers in diamond this controlling mechanism was used.
+Lith was developed at Technical University Vienna for controlling a quantum emitter experiment employing nitrogen vacancy centres (https://www.nature.com/articles/s41534-019-0236-x).
 
-The controller can generate trigger pulses or logical input for other instruments at a resolution of 1ns. 16 different sequence can be programmed. This sequences can contain 128 Pattern changes for 14 digital output ports.
+The controller can generate TTL-standard compatiple digital pulses at a time resolution of 1 ns with about 200 MHz bandwidth (depending on hardware used). 16 different sequences can be programmed, each may contain 128 pattern changes per output channel (14 channels). Furthermore the pulser offers sequence play control by two independently working mechanisms: 
+1. sequences have a inate priority value and may have a timeout 
+2. pre-set logic is triggered through optional digital-input channels.
 
-A sequence can have a timeout. If the programmed time is over the sequence is rerun. Additionally, a logical condition can be programmed that can cause an immediately rerun.
+Details on sequence play control:
+1. A sequence can have a finite timeout value. Passing the timeout will trigger the sequence to be rerun which currently has timed out AND the highest priority value (lower sequence numbers have higher priority). 
+2. Additionally, a logical condition can be programmed on the condition of detecting an event at one or both of the two digital input channels within the user specified time period in the sequence. Detection and passing the logic condition then triggers fast change of sequence with a minimal delay time of 48 ns. This mechanism provides the basis for repeating sequences until success.
 
-For the logical condition 2 input ports are provided. The impulses on this ports are counted in a definable time interval. If the count is not in a specified interval the sequence is repeated. This can be used to get the test object into a base state and this process will be repeated till the base state is reached.
+A sequence can be up to 4 seconds long and the time to switch between two sequences is always exactly 48ns. 
 
-A sequence can be up to 4 second long and the time to switch between two sequences is exactly 48ns. If more the one sequence needs to be rerun the sequence with the lower number has the higher priority.
-
-More information about the design can be found in this documentation: https://github.com/im-pro-at/lithpulser/blob/master/docu/projekt.pdf
+More information about the design can be found in documentation: https://github.com/im-pro-at/lithpulser/blob/master/docu/projekt.pdf
 
 ## Hardware 
 
@@ -22,7 +24,7 @@ At the moment only the STEMlab 125-10 from red pitaya is supported.
 
 https://www.redpitaya.com/p1/stemlab-125-10-starter-kit
 
-But It should not be a big Problem to port this project to other development boards and it should even run on an Z-7007S but is not tested.
+But it should be possible to port this project to other development boards as well and it should even run on an Z-7007S but this has not been tested.
 
 
 ## Get started
